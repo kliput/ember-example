@@ -1,0 +1,15 @@
+<div class="spacing"></div>
+{{#sticky-element top=top as |sticky|}}
+  {{#if sticky.isSticky}}
+    {{test-callback callback=(action "setSticky" true)}}
+  {{else}}
+    {{test-callback callback=(action "setSticky" false)}}
+  {{/if}}
+  <h2>Nagłówek {{top}}</h2>
+{{/sticky-element}}
+isSticky: {{isSticky}}
+<ul id="ul-list">
+  {{#each list as |item|}}
+    <li>{{item.name}}</li>
+  {{/each}}
+</ul>
